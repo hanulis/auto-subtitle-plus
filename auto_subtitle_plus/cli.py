@@ -3,6 +3,7 @@ import glob
 import psutil
 import ffmpeg
 import whisper
+import stable_whisper
 import argparse
 import warnings
 import tempfile
@@ -76,8 +77,9 @@ def main():
             "forcing English detection")
         args["language"] = "en"
 
-    model = whisper.load_model(model_name, device=device)
-
+    # model = whisper.load_model(model_name, device=device)
+    model = stable_whisper.load_model(model_name, device=device)
+    
     # Extract audio from video. Skip if it is already an audio file
     audios = get_audio(paths, output_audio, output_dir, extract_wokers)
 
