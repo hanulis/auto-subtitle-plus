@@ -9,6 +9,7 @@ setup(
     install_requires=[
         'youtube-dl',
         'psutil',
+        'stable-ts',
         'openai-whisper @ git+https://github.com/jumon/whisper.git@main#egg=whisper'
     ],
     description="Automatically generate and/or embed subtitles into your videos",
